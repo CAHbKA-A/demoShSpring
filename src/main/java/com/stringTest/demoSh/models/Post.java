@@ -2,10 +2,16 @@ package com.stringTest.demoSh.models;
 
 
 
+import lombok.*;
+
 import javax.persistence.*;
 
-//@Getter
-//@Setter
+@Getter
+@Setter
+@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
+
 @Entity
 public class Post {
     @Id
@@ -18,43 +24,9 @@ public class Post {
 
     private int views;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
+    public Post(String title, String anons, String fullText) {
         this.title = title;
-    }
-
-    public String getAnons() {
-        return anons;
-    }
-
-    public void setAnons(String anons) {
         this.anons = anons;
-    }
-
-    public String getFullText() {
-        return fullText;
-    }
-
-    public void setFullText(String fullText) {
         this.fullText = fullText;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public void setViews(int views) {
-        this.views = views;
     }
 }
