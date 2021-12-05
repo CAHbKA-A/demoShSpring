@@ -13,9 +13,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 @Entity
+@ToString
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Column(name = "id_post")
     private Long id;
 
